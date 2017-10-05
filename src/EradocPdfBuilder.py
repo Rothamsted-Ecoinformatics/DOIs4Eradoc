@@ -9,7 +9,6 @@ from PyPDF2 import PdfFileReader, PdfFileMerger
 from FrontPager import FrontPage
 from EradocData import EraDocumentData
 from Bookmark import BookmarkData
-from PdfMerger import bookmarksData
 
 def getBookmarks(eraCursor, bookId):
     eraCursor.execute("select Rs.FID, Rs.Rtitle from Rs inner join Books on Rs.BID = Books.BookID where Rs.BID="+bookId+" order by Rs.BID,Rs.FID");
