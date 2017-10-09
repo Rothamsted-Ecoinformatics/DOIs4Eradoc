@@ -21,9 +21,9 @@ eraCon = pymysql.connect(host=erahost,user=erauser,password=erapwd,db=eradb)
 cursor = eraCon.cursor()
 
 #http://mysql1.rothamsted.ac.uk/phpmyadmin/import.php#PMAURL-3:sql.php?db=eradoc&table=Rs&server=1&target=&token=c9827285e632afa8d396e0e56dfd465c
-
+bookId=120
 #try:
-cursor.execute("select Books.bookid,booktitle,year,count(*) as nofPages from Books inner join Pages on Books.bookid = Pages.bookid where collectionID = 1 and Books.bookid = 120 group by Books.bookid,booktitle,year");
+cursor.execute("select Books.bookid,booktitle,year,count(*) as nofPages from Books inner join Pages on Books.bookid = Pages.bookid where collectionID = 1 and Books.bookid = " + str(bookId) +" group by Books.bookid,booktitle,year");
 data = cursor.fetchall()
 for row in data:
     # Open a file named for the ID and collection.
@@ -64,7 +64,8 @@ for row in data:
             {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41528075', 'subject' : 'broadbalk wilderness experiment'},
             {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41528232', 'subject' : 'geescroft wilderness experiments'},
             {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41530125', 'subject' : 'agdell long-term experiment'},
-            {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41528611', 'subject' : 'barnfield clover long-term experiment'}
+            {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41528611', 'subject' : 'barnfield long-term experiment'},
+            {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41528458', 'subject' : 'Garden clover long-term experiment'}
         ]
     
     for rowContents in dataContents:
@@ -303,6 +304,15 @@ for row in data:
         
     #make subjects unique
     subjectsu = list({v['subject']:v for v in subjects}.values())
+    
+    # Get the related identifiers
+    curArts = eraCon.cursor()
+    curArts.execute("select DOI from RaDOIs where BID = " + str(bookId));
+    dataArts = curArts.fetchall()
+    artsList = []
+    for rowArts in dataArts:
+        artsList.append({'relatedIdentifier' : rowArts[0], 'relatedIdentifierType' : 'DOI', 'relationType' : 'HasPart'})
+    arts = list({v['relatedIdentifier']:v for v in artsList}.values())
     data = {
         'identifier' : {
             'identifier' : doi,
@@ -318,6 +328,7 @@ for row in data:
         'publicationYear' : year,
         'resourceType': {'resourceTypeGeneral' : 'Text'},
         'subjects' : subjectsu,
+        'relatedIdentifiers' : arts, 
         'contributors' : [
             {'contributorType' : 'Distributor', 'contributorName' : 'Rothamsted Research'},
             {'contributorType' : 'HostingInstitution', 'contributorName' : 'Rothamsted Research'},
