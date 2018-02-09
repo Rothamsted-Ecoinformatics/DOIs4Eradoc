@@ -3,28 +3,18 @@ Created on 30 May 2017
 
 @author: ostlerr
 '''
-import pymysql
-import configparser
-from datacite import DataCiteMDSClient, schema40
+from datacite import schema40
 import sys
 import getpass
-
-config = configparser.ConfigParser()
-config.read('config.ini')
-# ERA database
-erahost = config['ERA_DATABASE']['host']
-erauser = config['ERA_DATABASE']['user']
-erapwd= config['ERA_DATABASE']['password']
-eradb = config['ERA_DATABASE']['db']
-eraCon = pymysql.connect(host=erahost,user=erauser,password=erapwd,db=eradb)
-
+from EraConnect import getDbConnection, getDataCiteClient
+eraCon = getDbConnection()
 cursor = eraCon.cursor()
 
 #http://mysql1.rothamsted.ac.uk/phpmyadmin/import.php#PMAURL-3:sql.php?db=eradoc&table=Rs&server=1&target=&token=c9827285e632afa8d396e0e56dfd465c
 
-bookId = 5
+bookId = 7
 #try:
-cursor.execute("select Rs.RUID, Rs.RTitle, Books.year, Rs.LID - Rs.FID as nofPages, Rs.RAuthors, Rs.BID, Books.bookTitle, Rs.FID, Rs.LID from Rs inner join Books on Rs.BID = Books.bookid where Books.bookid = " + str(bookId) + " and Rs.needsDOI = 1");
+cursor.execute("select Rs.RUID, Rs.RTitle, Books.year, Rs.LID - Rs.FID as nofPages, Rs.RAuthors, Rs.BID, Books.bookTitle, Rs.FID, Rs.LID from Rs inner join Books on Rs.BID = Books.bookid where Rs.RUID = 39931 and Rs.needsDOI = 1");
 data = cursor.fetchall()
 for row in data:
     # Open a file named for the ID and collection.
@@ -68,8 +58,9 @@ for row in data:
 #             {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41332378', 'subject' : 'rothamsted classical experiments'},
 #   
     if rTitle.lower().find("broadbalk") > -1 :
-        subjects.append({'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41331872', 'subject' : 'broadbalk long-term experiment'})
-#             {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q7137747', 'subject' : 'park grass long-term experiment'},
+        subjects.append(
+#            {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41331872', 'subject' : 'broadbalk long-term experiment'})
+            {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q7137747', 'subject' : 'park grass long-term experiment'})
 #             {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41530393', 'subject' : 'rothamsted long-term experiments'},
 #             {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41523123', 'subject' : 'hoosfield alternate wheat and fallow long-term experiment'},
 #             {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41528375', 'subject' : 'exhaustion land long-term experiment'},
@@ -385,16 +376,11 @@ for row in data:
     
     try:
         prefix = ""
-        d = DataCiteMDSClient(
-            username=config['DATACITE']['user'],
-            password=config['DATACITE']['password'],
-            prefix=config['DATACITE']['prefix'],
-            test_mode=False
-        )
+        d = getDataCiteClient()
         d.metadata_post(schema40.tostring(data))
         print("do url")
         iyear = int(year)-1
-        doiurl = "http://www.era.rothamsted.ac.uk/eradoc/article/ResReport"+ str(iyear) + "p2-" + str(fid) + "-" + str(lid)
+        doiurl = "http://www.era.rothamsted.ac.uk/eradoc/article/ResReport"+ str(iyear) + "-" + str(fid) + "-" + str(lid)
         print(doiurl)
         d.doi_post(doi,doiurl)
         xname = "D:/doi_out/ERADOC-1-" + str(rId) + ".xml"

@@ -1,78 +1,49 @@
 '''
-Created on 30 May 2017
+Created on 2 Nov 2017
 
 @author: ostlerr
 '''
-import pymysql
-import configparser
-from datacite import DataCiteMDSClient, schema40
+from datacite import schema40
 import sys
 import getpass
+from EraConnect import getDbConnection, getDataCiteClient
 
-config = configparser.ConfigParser()
-config.read('config.ini')
-# ERA database
-erahost = config['ERA_DATABASE']['host']
-erauser = config['ERA_DATABASE']['user']
-erapwd= config['ERA_DATABASE']['password']
-eradb = config['ERA_DATABASE']['db']
-eraCon = pymysql.connect(host=erahost,user=erauser,password=erapwd,db=eradb)
+eraCon = getDbConnection()
 
 cursor = eraCon.cursor()
 
-#http://mysql1.rothamsted.ac.uk/phpmyadmin/import.php#PMAURL-3:sql.php?db=eradoc&table=Rs&server=1&target=&token=c9827285e632afa8d396e0e56dfd465c
-#bookId2=129
-bookId1=28
+bookId=143
 #try:
-cursor.execute("select Books.bookid,booktitle,year,count(*) as nofPages from Books inner join Pages on Books.bookid = Pages.bookid where Books.bookid = " + str(bookId1) +" group by Books.bookid,booktitle,year");
+cursor.execute("select Books.bookid,booktitle,year,ISSN,count(*) as nofPages from Books inner join Pages on Books.bookid = Pages.bookid where Books.bookid = " + str(bookId) +" group by Books.bookid,booktitle,year");
 data = cursor.fetchall()
 for row in data:
     # Open a file named for the ID and collection.
     bookId1 = row[0]
     bookTitle = row[1]
     year = row[2]
-    nofPages = row[3]
+    issn = row[3]
+    nofPages = row[4]
     
-    doi = "10.23637/ERADOC-1-" + str(bookId1)
+    doi = "10.23637/ERADOC-1-" + str(bookId)
     pages = str(nofPages) + " pages"
     abstract = "Scanned PDF of "+bookTitle
     
     curContents = eraCon.cursor()    
-    curContents.execute("select RTitle, FID, RAuthors from Rs where bid = "+ str(bookId1) +" order by FID");
+    curContents.execute("select RTitle, FID from Rs where bid = "+ str(bookId) +" order by FID");
     dataContents = curContents.fetchall()
     toc = ""
     
     subjects = [
-            {'lang' : 'en', 'subjectScheme' : 'AGROVOC', 'schemeURI' : 'http://aims.fao.org/standards/agrovoc', 'valueURI' : 'http://aims.fao.org/aos/agrovoc/c_10176', 'subject' : 'crop yield'},
-            {'lang' : 'en', 'subjectScheme' : 'AGROVOC', 'schemeURI' : 'http://aims.fao.org/standards/agrovoc', 'valueURI' : 'http://aims.fao.org/aos/agrovoc/c_4780', 'subject' : 'meteorological observations'},
-            {'lang' : 'en', 'subjectScheme' : 'AGROVOC', 'schemeURI' : 'http://aims.fao.org/standards/agrovoc', 'valueURI' : 'http://aims.fao.org/aos/agrovoc/c_10795', 'subject' : 'fertilizer application'},
-            {'lang' : 'en', 'subjectScheme' : 'AGROVOC', 'schemeURI' : 'http://aims.fao.org/standards/agrovoc', 'valueURI' : 'http://aims.fao.org/aos/agrovoc/c_8373', 'subject' : 'wheat'},
             {'lang' : 'en', 'subjectScheme' : 'AGROVOC', 'schemeURI' : 'http://aims.fao.org/standards/agrovoc', 'valueURI' : 'http://aims.fao.org/aos/agrovoc/c_7156', 'subject' : 'soil'},
-            {'lang' : 'en', 'subjectScheme' : 'AGROVOC', 'schemeURI' : 'http://aims.fao.org/standards/agrovoc', 'valueURI' : 'http://aims.fao.org/aos/agrovoc/c_6662', 'subject' : 'crop rotation'},
-            {'lang' : 'en', 'subjectScheme' : 'AGROVOC', 'schemeURI' : 'http://aims.fao.org/standards/agrovoc', 'valueURI' : 'http://aims.fao.org/aos/agrovoc/c_8679', 'subject' : 'agricultural research'},
-            {'lang' : 'en', 'subjectScheme' : 'AGROVOC', 'schemeURI' : 'http://aims.fao.org/standards/agrovoc', 'valueURI' : 'http://aims.fao.org/aos/agrovoc/c_211', 'subject' : 'agronomy'},
-            {'lang' : 'en', 'subjectScheme' : 'AGROVOC', 'schemeURI' : 'http://aims.fao.org/standards/agrovoc', 'valueURI' : 'http://aims.fao.org/aos/agrovoc/c_823', 'subject' : 'barley'},
-            {'lang' : 'en', 'subjectScheme' : 'AGROVOC', 'schemeURI' : 'http://aims.fao.org/standards/agrovoc', 'valueURI' : 'http://aims.fao.org/aos/agrovoc/c_2784', 'subject' : 'fallowing'},
-            {'lang' : 'en', 'subjectScheme' : 'AGROVOC', 'schemeURI' : 'http://aims.fao.org/standards/agrovoc', 'valueURI' : 'http://aims.fao.org/aos/agrovoc/c_2810', 'subject' : 'farmyard manure'},
-            {'lang' : 'en', 'subjectScheme' : 'AGROVOC', 'schemeURI' : 'http://aims.fao.org/standards/agrovoc', 'valueURI' : 'http://aims.fao.org/aos/agrovoc/c_5195', 'subject' : 'nitrogen fertilizers'},
             {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41331872', 'subject' : 'rothamsted research'},
             {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41332378', 'subject' : 'rothamsted classical experiments'},
-            {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41331872', 'subject' : 'broadbalk long-term experiment'},
-            {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q7137747', 'subject' : 'park grass long-term experiment'},
-            {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41530393', 'subject' : 'rothamsted long-term experiments'},
-            {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41523123', 'subject' : 'hoosfield alternate wheat and fallow long-term experiment'},
-            {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41528375', 'subject' : 'exhaustion land long-term experiment'},
-            {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41528075', 'subject' : 'broadbalk wilderness experiment'},
-            {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41528232', 'subject' : 'geescroft wilderness experiments'},
-            {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41530125', 'subject' : 'agdell long-term experiment'},
-            {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41528611', 'subject' : 'barnfield long-term experiment'},
-            {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41528458', 'subject' : 'Garden clover long-term experiment'}
+            {'lang' : 'en', 'subjectScheme' : 'wikidata', 'schemeURI' : 'http://www.wikidata.org/entity', 'valueURI' : 'http://www.wikidata.org/entity/Q41530393', 'subject' : 'rothamsted long-term experiments'}
+            
         ]
     
     for rowContents in dataContents:
         rTitle = rowContents[0]
         fid = rowContents[1]
-        auth = rowContents[2]
         toc = toc + rTitle.ljust(98,".") + ".." +str(fid) + "<br />"
         if rTitle.lower().find("mangolds") > -1 :
             subjects.append({'lang' : 'en', 'subjectScheme' : 'AGROVOC', 'schemeURI' : 'http://aims.fao.org/standards/agrovoc', 'valueURI' : 'http://aims.fao.org/aos/agrovoc/c_4576', 'subject' : 'mangolds'})
@@ -320,23 +291,13 @@ for row in data:
     #make subjects unique
     subjectsu = list({v['subject']:v for v in subjects}.values())
     
-    # Get the related identifiers
-    curArts = eraCon.cursor()
-    curArts.execute("select DOI from RaDOIs inner join Rs on RaDOIs.RUID = Rs.RUID where Rs.BID = " + str(bookId1));
-    dataArts = curArts.fetchall()
-    artsList = []
-    for rowArts in dataArts:
-        artsList.append({'relatedIdentifier' : rowArts[0], 'relatedIdentifierType' : 'DOI', 'relationType' : 'HasPart'})
+    altId = []
+    if len(issn) > 0: 
+        altId.append({'relatedIdentifier' : issn, 'alternateIdentifierType' : 'ISBN'})
         
-    #doi2 = "10.23637/ERADOC-1-" + str(bookId2)
-       
-    #if len(artsList) == 0:
-    #    artsList.append({'relatedIdentifier' : str(bookId2), 'relatedIdentifierType' : 'DOI', 'relationType' : 'IsContinuedBy'})
-    #else:
-    #    artsList.append({'relatedIdentifier' : str(bookId2), 'relatedIdentifierType' : 'DOI', 'relationType' : 'Continues'})
-    
-    arts = list({v['relatedIdentifier']:v for v in artsList}.values())
-    
+    locations = []
+    #locations.append({'geoLocationPlace' : 'Rothamsted Research, Harpenden, UK'})
+    locations.append({'geoLocationPlace' : 'Woburn Experimental Farm, UK'})
     data = {
         'identifier' : {
             'identifier' : doi,
@@ -352,7 +313,6 @@ for row in data:
         'publicationYear' : year,
         'resourceType': {'resourceTypeGeneral' : 'Text'},
         'subjects' : subjectsu,
-        'relatedIdentifiers' : arts, 
         'contributors' : [
             {'contributorType' : 'Distributor', 'contributorName' : 'Rothamsted Research'},
             {'contributorType' : 'HostingInstitution', 'contributorName' : 'Rothamsted Research'},
@@ -363,6 +323,7 @@ for row in data:
         'dates' : [
             {'date' : year, 'dateType' : 'Created'}
         ],
+        #'alternateIdentifiers': altId, 
         'language' : 'en',        
         'version' : '1.0',
         'sizes' : [
@@ -379,10 +340,7 @@ for row in data:
             {'lang' : 'en', 'descriptionType' : 'Abstract', 'description' : abstract},
             {'lang' : 'en', 'descriptionType' : 'TableOfContents', 'description' : toc},
         ],
-        'geoLocations' : [
-            {'geoLocationPlace' : 'Rothamsted Research, Harpenden, UK'},
-            {'geoLocationPlace' : 'Woburn Experimental Farm, UK'}
-        ],
+        'geoLocations' : locations,
         'fundingReferences' : [
             {'funderName' : 'Biotechnology and Biological Sciences Research Council', 
             'funderIdentifier' : {
@@ -398,34 +356,23 @@ for row in data:
     print(doc)
     
     try:
-        prefix = ""
-        d = DataCiteMDSClient(
-            username=config['DATACITE']['user'],
-            password=config['DATACITE']['password'],
-            prefix=config['DATACITE']['prefix'],
-            test_mode=False
-        )
+        d = getDataCiteClient()
         d.metadata_post(schema40.tostring(data))
-        d.doi_post(doi, "http://www.era.rothamsted.ac.uk/eradoc/book/"+str(bookId1))
+        d.doi_post(doi, "http://www.era.rothamsted.ac.uk/eradoc/book/"+str(bookId))
         xname = "D:/doi_out/ERADOC-1-" + str(bookId1) + ".xml"
         jname = "D:/doi_out/ERADOC-1-" + str(bookId1) + ".json"
         fxname = open(xname,'w+')
         fxname.write(doc)
         fxname.close()
-#         fjname = open(jname,'w+')
-#         fjname.write(data)
-#         fjname.close()
-        sql = "insert into BookDOIs (addedBy, bookID, DOI, Version) values ('" + getpass.getuser() + "'," + str(bookId1) + ",'https://doi.org/" + doi + "',1)"
+        
+        sql = "insert into BookDOIs (addedBy, bookID, DOI, Version) values ('" + getpass.getuser() + "'," + str(bookId) + ",'https://doi.org/" + doi + "',1)"
         print (sql)
         curIns = eraCon.cursor()
-        curIns.execute("insert into BookDOIs (addedBy, bookID, DOI, Version) values ('" + getpass.getuser() + "'," + str(bookId1) + ",'https://doi.org/" + doi + "',1)")
+        curIns.execute("insert into BookDOIs (addedBy, bookID, DOI, Version) values ('" + getpass.getuser() + "'," + str(bookId) + ",'https://doi.org/" + doi + "',1)")
         eraCon.commit()
         print('done')
     except:
         print("Unexpected error:", sys.exc_info()[0])
 
-    #print(datacite.schema40.validate(fin))
-    # Set metadata for DOI
-    
 #finally:
 #db.close()
