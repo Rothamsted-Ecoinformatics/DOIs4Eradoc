@@ -1,0 +1,64 @@
+{
+        "identifier" : {
+            "identifier" : "10.23637/model-SIFT-1-0", 
+            "identifierType" : "DOI"
+        },
+        "creators" : [
+            {
+                "creatorName" : "Dr Simon Pulley",
+                "givenName": "Simon",
+                "familyName": "Pully",
+                "affiliation": "Sustainable Agriculture Sciences Department, Rothamsted Research, North Wyke, Okehampton EX20 2SB, UK"
+            },
+            {
+                "creatorName" : "Prof. Adrian L. Collins",
+                "givenName": "Adrian L",
+                "familyName": "Collins",
+                "nameIdentifier": {
+                    "nameIdentifierScheme": "ORCID",
+                    "schemeURI": "http://orcid.org/0000-0001-8790-8473"
+                },
+                "affiliation": "Sustainable Agriculture Sciences Department, Rothamsted Research, North Wyke, Okehampton EX20 2SB, UK"
+            }
+        ],
+        "titles" : [
+            {"title" : "SIFT: SedIment Fingerprinting Tool"}
+        ],
+        "publisher" : "Rothamsted Research",
+        "publicationYear" : "2018",
+        "resourceType": {"resourceTypeGeneral" : "Model"},
+        "subjects" : [
+            {"lang" : "en", "subjectScheme" : "AGROVOC", "schemeURI" : "http://aims.fao.org/standards/agrovoc", "valueURI" : "http://aims.fao.org/aos/agrovoc/c_25341", "subject" : "sediment"},
+            {"lang" : "en", "subjectScheme" : "EnvThes", "schemeURI" : "http://vocabs.lter-europe.net/EnvThes", "valueURI" : "http://vocabs.lter-europe.net/EnvThes/msa0189", "subject" : "catchment management"},
+            {"lang" : "en", "subject" : "sediment fingerprinting"},
+            {"lang" : "en", "subject" : "sediment source tracing"}
+            
+        ],
+        "contributors" : [
+            {"contributorType" : "Distributor", "contributorName" : "Rothamsted Research Ltd"},
+            {"contributorType" : "HostingInstitution", "contributorName" : "Rothamsted Research Ltd"},
+            {"contributorType" : "RightsHolder", "contributorName" : "Rothamsted Research Ltd"},
+            {"contributorType" : "ContactPerson", "contributorName" : "Prof. Adrian L. Collins"}
+        ],
+        "dates" : [
+            {"date" : "2018", "dateType" : "Created"}
+        ], 
+        "language" : "en",        
+        "version" : "1.0",
+        "formats" : [
+            "R Shiny application"
+        ],
+        "rightsList" : [
+            {"rightsURI" : "https://www.apache.org/licenses/LICENSE-2.0", "rights" : "This work is licensed under Apache 2.0 Software Licence"},
+            {"rights" : "@Copyright Rothamsted Research Ltd 2018"}
+        ],
+        "descriptions" : [
+            {"lang" : "en", "descriptionType" : "Abstract", "description" : "A comprehensive software tool with a user-friendly GUI to walk any researcher or catchment manager through every step of a sediment source fingerprinting data analysis procedure. The tool is programmed using R and uses Shiny by RStudio for the user interface."}
+        ],
+        "fundingReferences" : [
+            {"funderName" : "Biotechnology and Biological Sciences Research Council", 
+            "funderIdentifier" : {
+                "funderIdentifier" : "http://dx.doi.org/10.13039/501100000268", "funderIdentifierType" : "Crossref Funder ID"
+            }}
+        ]
+    }
