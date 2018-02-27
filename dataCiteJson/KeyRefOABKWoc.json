@@ -1,6 +1,6 @@
 {
 	"identifier": {
-		"identifier": "10.23637/BROADBALK-WHEAT-YIELD-OA",
+		"identifier": "10.23637/KeyRefOABKWoc",
 		"identifierType": "DOI"
 	},
 	"creators": [
@@ -10,11 +10,11 @@
 	],
 	"titles": [
 		{
-			"title": "Broadbalk mean long-term winter wheat yields"
+			"title": "Organic carbon accumulation in Broadbalk Wilderness, 1881-1999"
 		}
 	],
 	"publisher": "Rothamsted Research",
-	"publicationYear": "2017",
+	"publicationYear": "2015",
 	"resourceType": {
 		"resourceTypeGeneral": "Dataset"
 	},
@@ -23,8 +23,8 @@
 			"lang": "en",
 			"subjectScheme": "WIKIDATA",
 			"schemeURI": "https://www.wikidata.org/entity/",
-			"valueURI": "https://www.wikidata.org/entity/Q41331872",
-			"subject": "Broadbalk long-term experiment"
+			"valueURI": "https://www.wikidata.org/entity/Q41528075",
+			"subject": "Broadbalk Wilderness experiment"
 		},
 		{
 			"lang": "en",
@@ -37,36 +37,29 @@
 			"lang": "en",
 			"subjectScheme": "AGROVOC",
 			"schemeURI": "http://aims.fao.org/standards/agrovoc",
-			"valueURI": "http://aims.fao.org/aos/agrovoc/c_10176",
-			"subject": "Crop yield"
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_7156",
+			"subject": "Soil"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "GACS",
+			"schemeURI": "http://id.agrisemantics.org/gacs/",
+			"valueURI": "http://id.agrisemantics.org/gacs/C4683",
+			"subject": "Soil organic carbon"
 		},
 		{
 			"lang": "en",
 			"subjectScheme": "AGROVOC",
 			"schemeURI": "http://aims.fao.org/standards/agrovoc",
-			"valueURI": "http://aims.fao.org/aos/agrovoc/c_8373",
-			"subject": "Wheat"
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_8433",
+			"subject": "Woodland"
 		},
 		{
 			"lang": "en",
 			"subjectScheme": "AGROVOC",
 			"schemeURI": "http://aims.fao.org/standards/agrovoc",
-			"valueURI": "http://aims.fao.org/aos/agrovoc/c_2867",
-			"subject": "Fertilizer"
-		},
-		{
-			"lang": "en",
-			"subjectScheme": "AGROVOC",
-			"schemeURI": "http://aims.fao.org/standards/agrovoc",
-			"valueURI": "http://aims.fao.org/aos/agrovoc/c_1971",
-			"subject": "Cropping system"
-		},
-		{
-			"lang": "en",
-			"subjectScheme": "AGROVOC",
-			"schemeURI": "http://aims.fao.org/standards/agrovoc",
-			"valueURI": "http://aims.fao.org/aos/agrovoc/c_2810",
-			"subject": "Farmyard manure"
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_2464",
+			"subject": "Ecological succession"
 		}
 	],
 	"contributors": [
@@ -146,11 +139,11 @@
 	],
 	"dates": [
 		{
-			"date": "2006",
+			"date": "2015",
 			"dateType": "Created"
 		},
 		{
-			"date": "2017-09-01",
+			"date": "2015",
 			"dateType": "Updated"
 		}
 	],
@@ -170,14 +163,14 @@
 		{
 			"lang": "en",
 			"descriptionType": "Abstract",
-			"description": "Summary data showing the mean long-term winter wheat yields from selected treatments on Broadbalk 1852-2016."
+			"description": "Summary data showing changes soil organic carbon on an area of the previously cultivated land on the Broadbalk field fenced off in the 1880s and allowed to revert naturally to woodland, 1881-1999."
 		}
 	],
 	"geoLocations": [
 		{
 			"geoLocationPoint" : {
-				"pointLongitude": -0.373009,
-				"pointLatitude": 51.80946
+				"pointLongitude": -0.375241,
+				"pointLatitude": 51.810057
 			},
 			"geoLocationPlace": "Broadbalk Field, Rothamsted Estate"			
 		}
@@ -190,9 +183,9 @@
 				"funderIdentifierType": "Crossref Funder ID"
 			},
 			"awardNumber": {
-				"awardNumber": "BBS/E/C/000J0300"
+				"awardNumber": "BBS/E/C/00005189"
 			},
-			"awardTitle": "The Rothamsted Long-term Experiments National Capability"
+			"awardTitle": "The Rothamsted Long-term Experiments including Sample Archive and e-RA database"
 		}
 	]
 }

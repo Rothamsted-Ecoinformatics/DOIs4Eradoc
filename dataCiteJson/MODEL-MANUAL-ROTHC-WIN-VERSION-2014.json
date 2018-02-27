@@ -1,0 +1,131 @@
+{
+	"identifier": {
+		"identifier": "10.23637/MODEL-MANUAL-ROTHC-WIN-VERSION-2014",
+		"identifierType": "DOI"
+	},
+	"creators": [
+		{
+			"creatorName": "Kevin Coleman",
+			"givenName": "Kevin",
+			"familyName": "Coleman",
+			"nameIdentifiers": [
+				{
+					"nameIdentifier": "http://orcid.org/0000-0002-9640-1479",
+					"nameIdentifierScheme": "ORCID",
+					"schemeURI": "http://orcid.org"
+				}
+			],
+			"affiliations": [
+				"Sustainable Agriculture Sciences, Rothamsted Research, Harpenden, Hertfordshire, AL5 2JQ, UK"
+			]
+		},
+		{
+			"creatorName": "David Jenkinson",
+			"givenName": "David",
+			"familyName": "Jenkinson",
+			"affiliation": "Rothamsted Research, Harpenden, Hertfordshire, AL5 2JQ, UK"
+		}
+	],
+	"titles": [
+		{
+			"title": "RothC - A model for the turnover of carbon in soil: Model description and users guide (windows version)"
+		}
+	],
+	"publisher": "Rothamsted Research",
+	"publicationYear": "2014",
+	"resourceType": {
+		"resourceTypeGeneral": "Text"
+	},
+	"subjects": [
+		{
+			"lang": "en",
+			"subject": "RothC"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "GACS",
+			"schemeURI": "http://id.agrisemantics.org/gacs/",
+			"valueURI": "http://id.agrisemantics.org/gacs/C4683",
+			"subject": "Soil organic carbon"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "GACS",
+			"schemeURI": "http://id.agrisemantics.org/gacs/",
+			"valueURI": "http://id.agrisemantics.org/gacs/C150",
+			"subject": "Models"
+		}
+	],
+	"contributors": [
+		{
+			"contributorType": "Distributor",
+			"contributorName": "Rothamsted Research Ltd"
+		},
+		{
+			"contributorType": "HostingInstitution",
+			"contributorName": "Rothamsted Research Ltd"
+		},
+		{
+			"contributorType": "RightsHolder",
+			"contributorName": "Rothamsted Research Ltd"
+		},
+		{
+			"contributorType": "DataCurator",
+			"contributorName": "Kevin Coleman",
+			"givenName": "Kevin",
+			"familyName": "Coleman",
+			"nameIdentifiers": [
+				{
+					"nameIdentifier": "http://orcid.org/0000-0002-9640-1479",
+					"nameIdentifierScheme": "ORCID",
+					"schemeURI": "http://orcid.org"
+				}
+			],
+			"affiliations": [
+				"Sustainable Agriculture Sciences, Rothamsted Research, Harpenden, Hertfordshire, AL5 2JQ, UK"
+			]
+		}
+	],
+	"dates": [
+		{
+			"date": "2014-06",
+			"dateType": "Created"
+		}
+	],
+	"language": "en",	
+	"relatedIdentifiers" : [
+		{
+			"relatedIdentifier" : "http://doi.org/10.23637/MODEL-ROTHC-26-3",
+			"relatedIdentifierType" : "DOI",
+			"relationType": "Documents"
+		}
+	],
+	"sizes" : [
+		"44 pages"
+	],
+	"formats": [
+		"application/pdf"
+	],
+	"rightsList": [
+		{
+			"rightsURI": "https://creativecommons.org/licenses/by/4.0/",
+			"rights": "@Copyright Rothamsted Research Ltd 2018. This work is licensed under Creative Commons Attribution 4.0 International Licence"
+		}
+	],
+	"descriptions": [
+		{
+			"lang": "en",
+			"descriptionType": "Abstract",
+			"description": "RothC is a model for the turnover of organic carbon in non-waterlogged topsoils, that allows for the effects of soil type, temperature, moisture content and plant cover on the turnover process. It uses a monthly time step to calculate total organic carbon (t ha-1), microbial biomass carbon (t C ha -1) and 14C (from which the equivalent radiocarbon age of the soil can be calculated) on a years to centuries timescale."
+		}
+	],
+	"fundingReferences": [
+		{
+			"funderName": "Biotechnology and Biological Sciences Research Council",
+			"funderIdentifier": {
+				"funderIdentifier": "http://dx.doi.org/10.13039/501100000268",
+				"funderIdentifierType": "Crossref Funder ID"
+			}
+		}
+	]
+}

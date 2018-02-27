@@ -1,0 +1,198 @@
+{
+	"identifier": {
+		"identifier": "10.23637/KeyRefOABKyields",
+		"identifierType": "DOI"
+	},
+	"creators": [
+		{
+			"creatorName": "Rothamsted Research"
+		}
+	],
+	"titles": [
+		{
+			"title": "Broadbalk mean long-term winter wheat yields, 1852-2016"
+		}
+	],
+	"publisher": "Rothamsted Research",
+	"publicationYear": "2017",
+	"resourceType": {
+		"resourceTypeGeneral": "Dataset"
+	},
+	"subjects": [
+		{
+			"lang": "en",
+			"subjectScheme": "WIKIDATA",
+			"schemeURI": "https://www.wikidata.org/entity/",
+			"valueURI": "https://www.wikidata.org/entity/Q41331872",
+			"subject": "Broadbalk long-term experiment"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "GACS",
+			"schemeURI": "http://id.agrisemantics.org/gacs/",
+			"valueURI": "http://id.agrisemantics.org/gacs/C5355",
+			"subject": "Long term experiments"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "AGROVOC",
+			"schemeURI": "http://aims.fao.org/standards/agrovoc",
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_10176",
+			"subject": "Crop yield"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "AGROVOC",
+			"schemeURI": "http://aims.fao.org/standards/agrovoc",
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_8373",
+			"subject": "Wheat"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "AGROVOC",
+			"schemeURI": "http://aims.fao.org/standards/agrovoc",
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_2867",
+			"subject": "Fertilizer"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "AGROVOC",
+			"schemeURI": "http://aims.fao.org/standards/agrovoc",
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_1971",
+			"subject": "Cropping system"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "AGROVOC",
+			"schemeURI": "http://aims.fao.org/standards/agrovoc",
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_2810",
+			"subject": "Farmyard manure"
+		}
+	],
+	"contributors": [
+		{
+			"contributorType": "Distributor",
+			"contributorName": "Rothamsted Research Ltd"
+		},
+		{
+			"contributorType": "HostingInstitution",
+			"contributorName": "Rothamsted Research Ltd"
+		},
+		{
+			"contributorType": "RightsHolder",
+			"contributorName": "Rothamsted Research Ltd"
+		},
+		{
+			"contributorType": "ContactPerson",
+			"contributorName": "E-RA Curator Team"
+		},
+		{
+			"contributorType": "DataCurator",
+			"contributorName": "Margaret Glendining",
+			"familyName": "Glendining",
+			"givenName": "Margaret",
+			"nameIdentifiers": [
+				{
+					"nameIdentifier": "http://orcid.org/0000-0002-6466-4629",
+					"nameIdentifierScheme": "ORCID",
+					"schemeURI": "http://orcid.org"
+				}
+			],
+			"affiliations": [
+				"Computational and Analytical Sciences, Rothamsted Research, Harpenden, Hertfordshire, AL5 2JQ, UK"
+			]
+		},
+		{
+			"contributorType": "DataCurator",
+			"contributorName": "Sarah Perryman",
+			"familyName": "Perryman",
+			"givenName": "Sarah",
+			"nameIdentifiers": [
+				{
+					"nameIdentifier": "http://orcid.org/0000-0002-0056-2754",
+					"nameIdentifierScheme": "ORCID",
+					"schemeURI": "http://orcid.org"
+				}
+			],
+			"affiliations": [
+				"Computational and Analytical Sciences, Rothamsted Research, Harpenden, Hertfordshire, AL5 2JQ, UK"
+			]
+		},
+		{
+			"contributorType": "ProjectLeader",
+			"contributorName": "Andy Macdonald",
+			"familyName": "Macdonald",
+			"givenName": "Andy",
+			"nameIdentifiers": [
+				{
+					"nameIdentifier": "http://orcid.org/0000-0002-1785-4892",
+					"nameIdentifierScheme": "ORCID",
+					"schemeURI": "http://orcid.org"
+				}
+			],
+			"affiliations": [
+				"Sustainable Agriculture Sciences, Rothamsted Research, Harpenden, Hertfordshire, AL5 2JQ, UK"
+			]
+		},
+		{
+			"contributorType": "Researcher",
+			"contributorName": "Paul Poulton",
+			"familyName": "Poulton",
+			"givenName": "Paul",
+			"affiliations": [
+				"Sustainable Agriculture Sciences, Rothamsted Research, Harpenden, Hertfordshire, AL5 2JQ, UK"
+			]
+		}
+	],
+	"dates": [
+		{
+			"date": "2017",
+			"dateType": "Created"
+		},
+		{
+			"date": "2017-09-01",
+			"dateType": "Updated"
+		}
+	],
+	"language": "en",
+	"version": "1.0.0",
+	"formats": [
+		"application/pdf",
+		"application/vnd.ms-excel"
+	],
+	"rightsList": [
+		{
+			"rightsURI": "https://creativecommons.org/licenses/by/4.0/",
+			"rights": "@Copyright Rothamsted Research Ltd 2018. This work is licensed under Creative Commons Attribution 4.0 International Licence"
+		}
+	],
+	"descriptions": [
+		{
+			"lang": "en",
+			"descriptionType": "Abstract",
+			"description": "Summary data showing the mean long-term winter wheat yields from selected treatments on Broadbalk 1852-2016."
+		}
+	],
+	"geoLocations": [
+		{
+			"geoLocationPoint" : {
+				"pointLongitude": -0.373009,
+				"pointLatitude": 51.80946
+			},
+			"geoLocationPlace": "Broadbalk Field, Rothamsted Estate"			
+		}
+	],
+	"fundingReferences": [
+		{
+			"funderName": "Biotechnology and Biological Sciences Research Council",
+			"funderIdentifier": {
+				"funderIdentifier": "http://dx.doi.org/10.13039/501100000268",
+				"funderIdentifierType": "Crossref Funder ID"
+			},
+			"awardNumber": {
+				"awardNumber": "BBS/E/C/00005189"
+			},
+			"awardTitle": "The Rothamsted Long-term Experiments including Sample Archive and e-RA database"
+		}
+	]
+}

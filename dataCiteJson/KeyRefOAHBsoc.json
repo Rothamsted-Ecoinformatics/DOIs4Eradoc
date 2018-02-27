@@ -1,0 +1,184 @@
+{
+	"identifier": {
+		"identifier": "10.23637/KeyRefOAHBsoc",
+		"identifierType": "DOI"
+	},
+	"creators": [
+		{
+			"creatorName": "Rothamsted Research"
+		}
+	],
+	"titles": [
+		{
+			"title": "Hoosfield changes in soil organic carbon, 1852-1998"
+		}
+	],
+	"publisher": "Rothamsted Research",
+	"publicationYear": "2012",
+	"resourceType": {
+		"resourceTypeGeneral": "Dataset"
+	},
+	"subjects": [
+		{
+			"lang": "en",
+			"subjectScheme": "WIKIDATA",
+			"schemeURI": "https://www.wikidata.org/entity/",
+			"valueURI": "https://www.wikidata.org/entity/Q41522609",
+			"subject": "Hoosfield spring barley long-term experiment"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "GACS",
+			"schemeURI": "http://id.agrisemantics.org/gacs/",
+			"valueURI": "http://id.agrisemantics.org/gacs/C5355",
+			"subject": "Long term experiments"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "AGROVOC",
+			"schemeURI": "http://aims.fao.org/standards/agrovoc",
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_7156",
+			"subject": "Soil"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "GACS",
+			"schemeURI": "http://id.agrisemantics.org/gacs/",
+			"valueURI": "http://id.agrisemantics.org/gacs/C4683",
+			"subject": "Soil organic carbon"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "AGROVOC",
+			"schemeURI": "http://aims.fao.org/standards/agrovoc",
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_2810",
+			"subject": "Farmyard manure"
+		}
+	],
+	"contributors": [
+		{
+			"contributorType": "Distributor",
+			"contributorName": "Rothamsted Research Ltd"
+		},
+		{
+			"contributorType": "HostingInstitution",
+			"contributorName": "Rothamsted Research Ltd"
+		},
+		{
+			"contributorType": "RightsHolder",
+			"contributorName": "Rothamsted Research Ltd"
+		},
+		{
+			"contributorType": "ContactPerson",
+			"contributorName": "E-RA Curator Team"
+		},
+		{
+			"contributorType": "DataCurator",
+			"contributorName": "Margaret Glendining",
+			"familyName": "Glendining",
+			"givenName": "Margaret",
+			"nameIdentifiers": [
+				{
+					"nameIdentifier": "http://orcid.org/0000-0002-6466-4629",
+					"nameIdentifierScheme": "ORCID",
+					"schemeURI": "http://orcid.org"
+				}
+			],
+			"affiliations": [
+				"Computational and Analytical Sciences, Rothamsted Research, Harpenden, Hertfordshire, AL5 2JQ, UK"
+			]
+		},
+		{
+			"contributorType": "DataCurator",
+			"contributorName": "Sarah Perryman",
+			"familyName": "Perryman",
+			"givenName": "Sarah",
+			"nameIdentifiers": [
+				{
+					"nameIdentifier": "http://orcid.org/0000-0002-0056-2754",
+					"nameIdentifierScheme": "ORCID",
+					"schemeURI": "http://orcid.org"
+				}
+			],
+			"affiliations": [
+				"Computational and Analytical Sciences, Rothamsted Research, Harpenden, Hertfordshire, AL5 2JQ, UK"
+			]
+		},
+		{
+			"contributorType": "ProjectLeader",
+			"contributorName": "Andy Macdonald",
+			"familyName": "Macdonald",
+			"givenName": "Andy",
+			"nameIdentifiers": [
+				{
+					"nameIdentifier": "http://orcid.org/0000-0002-1785-4892",
+					"nameIdentifierScheme": "ORCID",
+					"schemeURI": "http://orcid.org"
+				}
+			],
+			"affiliations": [
+				"Sustainable Agriculture Sciences, Rothamsted Research, Harpenden, Hertfordshire, AL5 2JQ, UK"
+			]
+		},
+		{
+			"contributorType": "Researcher",
+			"contributorName": "Paul Poulton",
+			"familyName": "Poulton",
+			"givenName": "Paul",
+			"affiliations": [
+				"Sustainable Agriculture Sciences, Rothamsted Research, Harpenden, Hertfordshire, AL5 2JQ, UK"
+			]
+		}
+	],
+	"dates": [
+		{
+			"date": "2012",
+			"dateType": "Created"
+		},
+		{
+			"date": "2012-12-12",
+			"dateType": "Updated"
+		}
+	],
+	"language": "en",
+	"version": "1.0.0",
+	"formats": [
+		"application/pdf",
+		"application/vnd.ms-excel"
+	],
+	"rightsList": [
+		{
+			"rightsURI": "https://creativecommons.org/licenses/by/4.0/",
+			"rights": "@Copyright Rothamsted Research Ltd 2018. This work is licensed under Creative Commons Attribution 4.0 International Licence"
+		}
+	],
+	"descriptions": [
+		{
+			"lang": "en",
+			"descriptionType": "Abstract",
+			"description": "Summary data showing changes in soil organic carbon (SOC) content in selected treatments of the Hoosfield experiment, where spring barley has been grown each year since 1852, 1852-1998."
+		}
+	],
+	"geoLocations": [
+		{
+			"geoLocationPoint" : {
+				"pointLongitude": -0.376292,
+				"pointLatitude": 51.811556
+			},
+			"geoLocationPlace": "Hoosfield, Rothamsted Estate"			
+		}
+	],
+	"fundingReferences": [
+		{
+			"funderName": "Biotechnology and Biological Sciences Research Council",
+			"funderIdentifier": {
+				"funderIdentifier": "http://dx.doi.org/10.13039/501100000268",
+				"funderIdentifierType": "Crossref Funder ID"
+			},
+			"awardNumber": {
+				"awardNumber": "BBS/E/C/00005189"
+			},
+			"awardTitle": "The Rothamsted Long-term Experiments including Sample Archive and e-RA database"
+		}
+	]
+}

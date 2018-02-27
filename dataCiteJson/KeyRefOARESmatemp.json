@@ -1,0 +1,221 @@
+{
+	"identifier": {
+		"identifier": "10.23637/KeyRefOARESmatemp",
+		"identifierType": "DOI"
+	},
+	"creators": [
+		{
+			"creatorName": "Rothamsted Research"
+		}
+	],
+	"titles": [
+		{
+			"title": "Annual Mean Air Temperature at Rothamsted, 1878-2013"
+		}
+	],
+	"publisher": "Rothamsted Research",
+	"publicationYear": "2014",
+	"resourceType": {
+		"resourceTypeGeneral": "Dataset"
+	},
+	"subjects": [
+		{
+			"lang": "en",
+			"subjectScheme": "AGROVOC",
+			"schemeURI": "http://aims.fao.org/standards/agrovoc",
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_4781",
+			"subject": "Meteorolgical station"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "AGROVOC",
+			"schemeURI": "http://aims.fao.org/standards/agrovoc",
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_29564",
+			"subject": "weather data"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "AGROVOC",
+			"schemeURI": "http://aims.fao.org/standards/agrovoc",
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_15292",
+			"subject": "weather"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "AGROVOC",
+			"schemeURI": "http://aims.fao.org/standards/agrovoc",
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_7657",
+			"subject": "temperature"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "AGROVOC",
+			"schemeURI": "http://aims.fao.org/standards/agrovoc",
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_230",
+			"subject": "air temperature"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "AGROVOC",
+			"schemeURI": "http://aims.fao.org/standards/agrovoc",
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_7721",
+			"subject": "thermometer"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "AGROVOC",
+			"schemeURI": "http://aims.fao.org/standards/agrovoc",
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_1665",
+			"subject": "Climate"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "AGROVOC",
+			"schemeURI": "http://aims.fao.org/standards/agrovoc",
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_1666",
+			"subject": "Climate change"
+		}
+	],
+	"contributors": [
+		{
+			"contributorType": "Distributor",
+			"contributorName": "Rothamsted Research Ltd"
+		},
+		{
+			"contributorType": "HostingInstitution",
+			"contributorName": "Rothamsted Research Ltd"
+		},
+		{
+			"contributorType": "RightsHolder",
+			"contributorName": "Rothamsted Research Ltd"
+		},
+		{
+			"contributorType": "ContactPerson",
+			"contributorName": "E-RA Curator Team"
+		},
+		{
+			"contributorType": "DataCurator",
+			"contributorName": "Margaret Glendining",
+			"familyName": "Glendining",
+			"givenName": "Margaret",
+			"nameIdentifiers": [
+				{
+					"nameIdentifier": "http://orcid.org/0000-0002-6466-4629",
+					"nameIdentifierScheme": "ORCID",
+					"schemeURI": "http://orcid.org"
+				}
+			],
+			"affiliations": [
+				"Computational and Analytical Sciences, Rothamsted Research, Harpenden, Hertfordshire, AL5 2JQ, UK"
+			]
+		},
+		{
+			"contributorType": "DataCurator",
+			"contributorName": "Tony Scott",
+			"familyName": "Scott",
+			"givenName": "Tony",
+			"nameIdentifiers": [
+				{
+					"nameIdentifier": "http://orcid.org/0000-0002-6631-0672",
+					"nameIdentifierScheme": "ORCID",
+					"schemeURI": "http://orcid.org"
+				}
+			],
+			"affiliations": [
+				"Sustainable Agriculture Sciences, Rothamsted Research, Harpenden, Hertfordshire, AL5 2JQ, UK"
+			]
+		},
+		{
+			"contributorType": "DataCurator",
+			"contributorName": "Sarah Perryman",
+			"familyName": "Perryman",
+			"givenName": "Sarah",
+			"nameIdentifiers": [
+				{
+					"nameIdentifier": "http://orcid.org/0000-0002-0056-2754",
+					"nameIdentifierScheme": "ORCID",
+					"schemeURI": "http://orcid.org"
+				}
+			],
+			"affiliations": [
+				"Computational and Analytical Sciences, Rothamsted Research, Harpenden, Hertfordshire, AL5 2JQ, UK"
+			]
+		},
+		{
+			"contributorType": "ProjectLeader",
+			"contributorName": "Andy Macdonald",
+			"familyName": "Macdonald",
+			"givenName": "Andy",
+			"nameIdentifiers": [
+				{
+					"nameIdentifier": "http://orcid.org/0000-0002-1785-4892",
+					"nameIdentifierScheme": "ORCID",
+					"schemeURI": "http://orcid.org"
+				}
+			],
+			"affiliations": [
+				"Sustainable Agriculture Sciences, Rothamsted Research, Harpenden, Hertfordshire, AL5 2JQ, UK"
+			]
+		},
+		{
+			"contributorType": "Researcher",
+			"contributorName": "Paul Poulton",
+			"familyName": "Poulton",
+			"givenName": "Paul",
+			"affiliations": [
+				"Sustainable Agriculture Sciences, Rothamsted Research, Harpenden, Hertfordshire, AL5 2JQ, UK"
+			]
+		}
+	],
+	"dates": [
+		{
+			"date": "2014",
+			"dateType": "Created"
+		},
+		{
+			"date": "2016-04-21",
+			"dateType": "Updated"
+		}
+	],
+	"language": "en",
+	"version": "1.0.0",
+	"formats": [
+		"application/pdf",
+		"application/vnd.ms-excel"
+	],
+	"rightsList": [
+		{
+			"rightsURI": "https://creativecommons.org/licenses/by/4.0/",
+			"rights": "@Copyright Rothamsted Research Ltd 2018. This work is licensed under Creative Commons Attribution 4.0 International Licence"
+		}
+	],
+	"descriptions": [
+		{
+			"lang": "en",
+			"descriptionType": "Abstract",
+			"description": "Summary data showing annual mean air temperature at Rothamsted every year from 1878 - 2013. Also shown is the mean over each five-year period, 1878-1882, 1883-1887, etc."
+		}
+	],
+	"geoLocations": [
+		{
+			"geoLocationPoint" : {
+				"pointLongitude": -0.37,
+				"pointLatitude": 51.80
+			},
+			"geoLocationPlace": "Rothamsted weather station, Rothamsted Estate"			
+		}
+	],
+	"fundingReferences": [
+		{
+			"funderName": "Biotechnology and Biological Sciences Research Council",
+			"funderIdentifier": {
+				"funderIdentifier": "http://dx.doi.org/10.13039/501100000268",
+				"funderIdentifierType": "Crossref Funder ID"
+			},
+			"awardNumber": {
+				"awardNumber": "BBS/E/C/00005189"
+			},
+			"awardTitle": "The Rothamsted Long-term Experiments including Sample Archive and e-RA database"
+		}
+	]
+}
