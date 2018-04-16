@@ -1,0 +1,149 @@
+{
+	"identifier": {
+		"identifier": "10.23637/ERADOC-1-1961227",
+		"identifierType": "DOI"
+	},
+	"creators": [
+		{
+			"creatorName": "R. G. Warren and A. E. Johnston"
+		}
+	],
+	"titles": [
+		{
+			"title": "Barnfield"
+		}
+	],
+	"publisher": "Lawes Agricultural Trust",
+	"publicationYear": "1961",
+	"resourceType": {
+		"resourceTypeGeneral": "Text"
+	},
+	"subjects": [
+		{
+			"lang": "en",
+			"subjectScheme": "WIKIDATA",
+			"schemeURI": "https://www.wikidata.org/entity/",
+			"valueURI": "https://www.wikidata.org/entity/Q41528611",
+			"subject": "Barnfield long-term experiment"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "GACS",
+			"schemeURI": "http://id.agrisemantics.org/gacs/",
+			"valueURI": "http://id.agrisemantics.org/gacs/C5355",
+			"subject": "Long term experiments"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "GACS",
+			"schemeURI": "http://id.agrisemantics.org/gacs/",
+			"valueURI": "http://id.agrisemantics.org/gacs/C17159",
+			"subject": "Mangolds"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "GACS",
+			"schemeURI": "http://id.agrisemantics.org/gacs/",
+			"valueURI": "http://id.agrisemantics.org/gacs/C1748",
+			"subject": "Sugarbeet"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "GACS",
+			"schemeURI": "http://id.agrisemantics.org/gacs/",
+			"valueURI": "http://id.agrisemantics.org/gacs/C380",
+			"subject": "yields"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "AGROVOC",
+			"schemeURI": "http://aims.fao.org/standards/agrovoc",
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_2867",
+			"subject": "Fertilizer"
+		},
+		{
+			"lang": "en",
+			"subjectScheme": "AGROVOC",
+			"schemeURI": "http://aims.fao.org/standards/agrovoc",
+			"valueURI": "http://aims.fao.org/aos/agrovoc/c_2810",
+			"subject": "Farmyard manure"
+		}
+	],
+	"contributors": [
+		{
+			"contributorType": "Distributor",
+			"contributorName": "Rothamsted Research Ltd"
+		},
+		{
+			"contributorType": "HostingInstitution",
+			"contributorName": "Rothamsted Research Ltd"
+		},
+		{
+			"contributorType": "RightsHolder",
+			"contributorName": "Lawes Agricultural Trust"
+		},
+		{
+			"contributorType": "ContactPerson",
+			"contributorName": "E-RA Curator Team"
+		},
+		{
+			"contributorType": "DataCurator",
+			"contributorName": "E-RA Curator Team"
+		}
+	],
+	"dates": [
+		{
+			"date": "1961",
+			"dateType": "Created"
+		}
+	],
+	"language": "en",
+	"version": "1.0.0",
+	"relatedIdentifiers" : [
+		{
+			"relatedIdentifier" : "http://doi.org/10.23637/ERADOC-1-94",
+			"relatedIdentifierType" : "DOI",
+			"relationType": "IsPartOf"
+		}
+	],
+	"sizes" : [
+		"20 pages"
+	],
+	"formats": [
+		"application/pdf"
+	],
+	"rightsList": [
+		{
+			"rightsURI": "https://creativecommons.org/licenses/by/4.0/",
+			"rights": "@Copyright Lawes Agricultural Trust. This work is licensed under Creative Commons Attribution 4.0 International Licence"
+		}
+	],
+	"descriptions": [
+		{
+			"lang": "en",
+			"descriptionType": "Abstract",
+			"description": "Summary of the Barnfield long-term experiment published as part of the 1961 Rothamsted Annual Reports."
+		}
+	],
+	"geoLocations": [
+		{
+			"geoLocationPoint" : {
+				"pointLongitude": -0.358976, 
+				"pointLatitude": 51.807497
+			},
+			"geoLocationPlace": "Barnfield Field, Rothamsted Estate"			
+		}
+	],
+	"fundingReferences": [
+		{
+			"funderName": "Biotechnology and Biological Sciences Research Council",
+			"funderIdentifier": {
+				"funderIdentifier": "http://dx.doi.org/10.13039/501100000268",
+				"funderIdentifierType": "Crossref Funder ID"
+			}
+		},
+		{
+			"funderName": "Lawes Agricultural Trust"
+		}
+	]
+}
