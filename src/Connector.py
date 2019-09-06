@@ -5,7 +5,7 @@ Created on 30 May 2017
 '''
 import pymysql
 import configparser
-from datacite import DataCiteMDSClient, schema40
+from datacite import DataCiteMDSClient, schema41
 import sys
 import getpass
 
@@ -22,7 +22,7 @@ cursor = eraCon.cursor()
 
 #http://mysql1.rothamsted.ac.uk/phpmyadmin/import.php#PMAURL-3:sql.php?db=eradoc&table=Rs&server=1&target=&token=c9827285e632afa8d396e0e56dfd465c
 #bookId2=129
-bookId1=28
+bookId1 = input("Enter BookID")
 #try:
 cursor.execute("select Books.bookid,booktitle,year,count(*) as nofPages from Books inner join Pages on Books.bookid = Pages.bookid where Books.bookid = " + str(bookId1) +" group by Books.bookid,booktitle,year");
 data = cursor.fetchall()
@@ -391,17 +391,17 @@ for row in data:
             {'funderName' : 'Lawes Agricultural Trust'}
         ]
     }
-    print(schema40.tostring(data))
-    assert schema40.validate(data)
+    print(schema41.tostring(data))
+    #assert schema41.validate(data)
     
-    doc = schema40.tostring(data)
+    doc = schema41.tostring(data)
     print(doc)
     
     try:
         prefix = ""
         d = DataCiteMDSClient(
-            username=config['DATACITE']['user'],
-            password=config['DATACITE']['password'],
+           username=config['DATACITE']['user'],
+           password=config['DATACITE']['password'],
             prefix=config['DATACITE']['prefix'],
             test_mode=False
         )
