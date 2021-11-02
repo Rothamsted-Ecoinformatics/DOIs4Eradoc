@@ -405,7 +405,7 @@ for row in data:
             prefix=config['DATACITE']['prefix'],
             test_mode=False
         )
-        d.metadata_post(schema40.tostring(data))
+        d.metadata_post(schema41.tostring(data))
         d.doi_post(doi, "http://www.era.rothamsted.ac.uk/eradoc/book/"+str(bookId1))
         xname = "D:/doi_out/ERADOC-1-" + str(bookId1) + ".xml"
         jname = "D:/doi_out/ERADOC-1-" + str(bookId1) + ".json"

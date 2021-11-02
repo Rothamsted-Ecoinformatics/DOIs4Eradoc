@@ -3,7 +3,7 @@ Created on 30 May 2017
 
 @author: ostlerr
 '''
-from datacite import schema40
+from datacite import schema41
 import sys
 import getpass
 from EraConnect import getDbConnection, getDataCiteClient
@@ -369,15 +369,15 @@ for row in data:
         ]
     }
    
-    assert schema40.validate(data)
+    assert schema41.validate(data)
     #print(schema40.validate(data))
-    doc = schema40.tostring(data)
+    doc = schema41.tostring(data)
     print(doc)
     
     try:
         prefix = ""
         d = getDataCiteClient()
-        d.metadata_post(schema40.tostring(data))
+        d.metadata_post(schema41.tostring(data))
         print("do url")
         iyear = int(year)-1
         doiurl = "http://www.era.rothamsted.ac.uk/eradoc/article/ResReport"+ str(iyear) + "-" + str(fid) + "-" + str(lid)
@@ -400,7 +400,7 @@ for row in data:
     except:
         print("Unexpected error:", sys.exc_info()[0])
 
-    #print(datacite.schema40.validate(fin))
+    #print(datacite.schema41.validate(fin))
     # Set metadata for DOI
     
 #finally:

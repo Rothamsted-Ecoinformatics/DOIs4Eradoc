@@ -5,5 +5,5 @@ username:password https://mds.datacite.org/doi/10.5438/0012
 '''
 from requests.auth import HTTPBasicAuth
 import requests
-req = requests.get("http://mds.datacite.org/metadata/10.23637/ecn-north-wyke-booklet-2015",auth=HTTPBasicAuth('BL.ROTHRES','R0th@msted1843'))
+req = requests.get("http://mds.datacite.org/metadata/10.23637/ecn-north-wyke-booklet-2015",auth=HTTPBasicAuth('BL.ROTHRES','Jenkyn18'))
 print(req)
