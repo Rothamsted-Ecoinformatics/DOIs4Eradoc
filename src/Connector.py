@@ -16,15 +16,15 @@ erahost = config['ERA_DATABASE']['host']
 erauser = config['ERA_DATABASE']['user']
 erapwd= config['ERA_DATABASE']['password']
 eradb = config['ERA_DATABASE']['db']
-eraCon = pymysql.connect(host=erahost,user=erauser,password=erapwd,db=eradb)
+eraCon = pymysql.connect(host=erahost,user=erauser,password=erapwd,database=eradb)
 
 cursor = eraCon.cursor()
 
 #http://mysql1.rothamsted.ac.uk/phpmyadmin/import.php#PMAURL-3:sql.php?db=eradoc&table=Rs&server=1&target=&token=c9827285e632afa8d396e0e56dfd465c
 #bookId2=129
-bookId1 = input("Enter BookID")
+bookId1 = input("Enter BookID: ")
 #try:
-cursor.execute("select Books.bookid,booktitle,year,count(*) as nofPages from Books inner join Pages on Books.bookid = Pages.bookid where Books.bookid = " + str(bookId1) +" group by Books.bookid,booktitle,year");
+cursor.execute("select Books.bookid,booktitle,year,count(*) as nofPages from Books inner join Pages on Books.bookid = Pages.bookid where Books.bookid = " + str(bookId1) +" group by Books.bookid;");
 data = cursor.fetchall()
 for row in data:
     # Open a file named for the ID and collection.
@@ -322,7 +322,7 @@ for row in data:
     
     # Get the related identifiers
     curArts = eraCon.cursor()
-    curArts.execute("select DOI from RaDOIs inner join Rs on RaDOIs.RUID = Rs.RUID where Rs.BID = " + str(bookId1));
+    curArts.execute("select DOI from RaDOIs inner join Rs on RaDOIs.RUID = Rs.RUID where Rs.BID = " + str(bookId1) + ";");
     dataArts = curArts.fetchall()
     artsList = []
     for rowArts in dataArts:
